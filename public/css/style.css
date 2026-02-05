@@ -56,7 +56,7 @@
     object-fit: cover !important ;
 }
 .card-body{
-     padding: 0 !important;
+     padding: 0 ;
 }
 .card-text p{
     font-weight: 400 !important;
@@ -80,4 +80,7 @@ show page */
 }
 .btns{
     display: flex;
+}
+.rev{
+    background-color: #d5d0d0af;
 }

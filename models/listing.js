@@ -9,15 +9,21 @@ const listingSchema = new Schema({
     description: String,
     image: {
         type: String,
-         default: "https://unsplash.com/photos/white-concrete-building-under-blue-sky-during-daytime-mR1CIDduGLc",
+         default: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3",
         set: (v) =>
          v === ""
-        ? "https://unsplash.com/photos/white-concrete-building-under-blue-sky-during-daytime-mR1CIDduGLc"
+        ? "https://images.unsplash.com/photo-1560179707-f14e90ef3623?q=80&w=2073&auto=format&fit=crop&ixlib=rb-4.0.3"
         : v,
     },
     price: Number,
     location: String,
     country: String,
+    reviews : [
+        {
+            type: Schema.Types.ObjectId,
+             ref: "Review",
+        },
+    ],
 });
 
 const Listing = mongoose.model("Listing",listingSchema);
